@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     
     <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/bttn.css/0.2.4/bttn.css">
-
+    <!-- Bootstrap CSS Link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <title> {% block pagetitle %}
 
         {% endblock pagetitle %}</title>
@@ -34,7 +35,7 @@
         }
 
         body {
-            background-color: #4ECC5A;
+            background-color: #aabcad;
             /* background: -webkit-linear-gradient(to right, #66a776, #043610);
             background: linear-gradient(to right, #5d9c6a, #059b0d); */
             height: 100vh;
@@ -130,69 +131,16 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark " style="background-color:#05380b;">
-        <!-- <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button> -->
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="navbar-brand active">
-                    <a class="nav-link" href="/" style="color: white;">Home</a>
-                </li>
-                <li class="navbar-brand active">
-                    <a class="nav-link" href="/index" style="color: white;">AI Engine</a>
-                </li>
-                <li class="navbar-brand">
-                    <a class="nav-link" href="/market" style="color: white;">Supplements</a>
-                </li>
-                <li class="navbar-brand">
-                    <a class="nav-link" href="/contact" style="color: white;">Contact-Us</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    
     {% block body %}
 
     {% endblock body %}
-    <div class="footer-basic">
-        <footer>
-            <center>
-            <div style="padding: 5;">
-                <a target="_blank" href='mailto:krsikx@gmail.com'><img src="https://image.flaticon.com/icons/png/512/281/281769.png" height="40" width="40"></a>&nbsp
-                <a target="_blank" href="https://www.instagram.com/krsikx_india/"><img src="https://image.flaticon.com/icons/png/512/174/174855.png" height="40" width="40"></a>&nbsp
-                <a target="_blank"href="https://www.linkedin.com/company/krsikx-india-llp/"><img src="https://image.flaticon.com/icons/png/512/174/174857.png" height="40" width="40"></a>&nbsp
-            </div>
-            </center>
-            <br>
-            <ul class="list-inline">
-                <li class="list-inline-item"><a href="/">Home</a></li>
-                <li class="list-inline-item"><a target="_blank" href="https://www.krsikx.com/">Services</a></li>
-                <li class="list-inline-item"><a target="_blank" href="https://www.krsikx.com/copy-of-solutions">About</a></li>
-                <li class="list-inline-item laptop"><a href="/index">AI Engine</a></li>
-            </ul>
-            <p class="copyright">Created by Manthan Bhikadiya & Krishna Baldaniya</p>
-        </footer>
-    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
-</body>
-<!-- <script>
-    if (window.matchMedia("(max-width: 767px)").matches)
-    {
-        // The viewport is less than 768 pixels wide
-        document.write("This is a mobile device.");
-        window.location.replace('/mobile-device');
+        <!-- Bootstrap JS and Popper.js (required for some Bootstrap components) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 
-    } else {
-        
-        // The viewport is at least 768 pixels wide
-        document.write("This is a tablet or desktop.");
-    }
-</script> -->
-<!-- <script>
-    if(screen.width <= 700){
-        document.location = 'manthan2.html';
-    }
-</script> -->
+</body>
 </html>
