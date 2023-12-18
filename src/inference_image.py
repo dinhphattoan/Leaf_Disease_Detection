@@ -19,10 +19,6 @@ def image_segmentation(image_path):
         help='path to the model checkpoint'
     )
     args = parser.parse_args()
-
-    out_dir = os.path.join('..', 'CustomInferences_Result')
-    os.makedirs(out_dir, exist_ok=True)
-
     # Set computation device.
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
