@@ -1,0 +1,8 @@
+Plant-Disease-Detection/Flask Deployed App/plant_disease_model_1_latest.pt
+outputs/best_model_iou.pth
+outputs/model.pth
+src/__pycache__/datasets.cpython-311.pyc
+src/__pycache__/utils.cpython-311.pyc
+src/__pycache__/inference_image.cpython-311.pyc
+src/__pycache__/engine.cpython-311.pyc
+src/__pycache__/datasets.cpython-311.pyc

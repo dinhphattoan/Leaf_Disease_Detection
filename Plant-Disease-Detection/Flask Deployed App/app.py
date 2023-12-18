@@ -1,3 +1,4 @@
+import base64
 import os
 from flask import Flask, redirect, render_template, request
 from PIL import Image
@@ -6,8 +7,9 @@ import CNN
 import numpy as np
 import torch
 import pandas as pd
-
-
+import sys
+sys.path.append('../../src')
+import inference_image
 disease_info = pd.read_csv('disease_info.csv' , encoding='cp1252')
 supplement_info = pd.read_csv('supplement_info.csv',encoding='cp1252')
 
@@ -56,12 +58,20 @@ def submit():
         title = disease_info['disease_name'][pred]
         description =disease_info['description'][pred]
         prevent = disease_info['Possible Steps'][pred]
-        image_url = disease_info['image_url'][pred]
+        #image_url = disease_info['image_url'][pred]
+        image_pil = Image.fromarray(inference_image.image_segmentation(image))
+        # Save PIL Image to a temporary file
+        temp_file = 'temp_image.png'
+        image_pil.save(temp_file)
+        # Convert image to base64 for HTML display
+        with open(temp_file, 'rb') as f:
+            image_base64 = base64.b64encode(f.read()).decode('utf-8')
+
         supplement_name = supplement_info['supplement name'][pred]
         supplement_image_url = supplement_info['supplement image'][pred]
         supplement_buy_link = supplement_info['buy link'][pred]
         return render_template('submit.html' , title = title , desc = description , prevent = prevent , 
-                               image_url = image_url , pred = pred ,sname = supplement_name , simage = supplement_image_url , buy_link = supplement_buy_link)
+                               image_base64 = image_base64 , pred = pred ,sname = supplement_name , simage = supplement_image_url , buy_link = supplement_buy_link)
 
 @app.route('/market', methods=['GET', 'POST'])
 def market():
